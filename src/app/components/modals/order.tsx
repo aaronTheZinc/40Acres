@@ -27,7 +27,7 @@ export default function ShareOrderView({
   }, [orderSize, property]);
   const displayPrice = usePriceFormatter(price);
   const perShareDisplayPrice = usePriceFormatter(property.sharePrice);
-
+  //sha
   const handleCreateShareOrder = () => {};
   return (
     <>
