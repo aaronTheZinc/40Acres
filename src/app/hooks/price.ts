@@ -1,0 +1,1 @@
+export const usePriceFormatter = (priceInt: number) => `$${priceInt.toFixed(2).toString() }`
