@@ -4,7 +4,7 @@ import { SearchIcon } from "lucide-react";
 
 export const SearchBar = () => {
   return (
-    <div className="flex justify-between rounded-lg bg-[#f2f2f2] p-3 px-6">
+    <div className="flex w-full justify-between rounded-lg bg-[#f2f2f2] p-3 px-6">
       <input
         className="w-full bg-transparent outline-none"
         placeholder="Search Properties"

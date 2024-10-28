@@ -1,20 +1,16 @@
-import { Inter, Playfair_Display} from "next/font/google"
+import { Inter, Oswald } from "next/font/google";
 
-// export const PlayfairFont = Playfair_Display({
-// subsets: [`latin`],
-// variable: "--font-sans",
-// })
+export const OswaldFont = Oswald({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
 export const InterFont = Inter({
-      subsets: ["latin"],
-      variable: "--font-sans",
-  
-    });
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
 
-    
-    export const KoulenFont = Inter({
-      subsets: ["latin"],
-      variable: "--font-sans",
-      weight: "900"
-    });
-
-    
+export const KoulenFont = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  weight: "900",
+});

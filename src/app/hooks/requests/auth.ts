@@ -73,7 +73,7 @@ export const useLoginForm = () => {
         const promise = registerAPI.mutateAsync(values).then((res) => {
             if(res.status !== 200) throw new Error('invalid status code')
         });
-        toast.promise(promise, {
+        void toast.promise(promise, {
             loading: "Creating...",
             error: "Failed To Login",
             success: 'Successfully Logged In'
