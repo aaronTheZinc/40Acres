@@ -1,16 +1,46 @@
-import { BellIcon } from "lucide-react";
+"use client";
 
-export default function NotifyMeBanner() {
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Alert, AlertTitle } from "@/components/ui/alert";
+import { useState } from "react";
+
+export default function GetNotifiedBanner() {
+  const [email, setEmail] = useState("");
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState(null);
+
+  const handleSubmit = () => {
+    setIsSubmitted(true);
+    setError(null);
+
+    // Implement email submission logic here (API call, etc.)
+  };
+
   return (
-    <div className="rounded border border-black bg-black p-5 shadow-xl">
-      <div className="flex items-center justify-between gap-6 text-center">
-        <label className="font-mono text-sm text-white md:text-2xl">
-          🚀 Get Notified When We Launch
-        </label>
-        <button className="flex gap-2 rounded bg-white p-2 text-black">
-          <BellIcon />
-        </button>
-      </div>
-    </div>
+    <Card className="mx-auto w-full p-3 text-center">
+      <CardHeader>
+        <CardTitle>Get Notified When We Launch! 🚀</CardTitle>
+        <p className="text-sm text-gray-500">
+          Sign up to receive an email when we go live.
+        </p>
+      </CardHeader>
+      <CardContent className="mt-4 space-y-4">
+        <Button onClick={handleSubmit} className="" disabled={isSubmitted}>
+          {isSubmitted ? "Subscribed!" : "Notify Me"}
+        </Button>
+        {error && (
+          <Alert variant="destructive" className="mt-2">
+            <AlertTitle>{error}</AlertTitle>
+          </Alert>
+        )}
+        {isSubmitted && !error && (
+          <Alert variant="success" className="mt-2">
+            <AlertTitle>Thank you! You’ll hear from us soon.</AlertTitle>
+          </Alert>
+        )}
+      </CardContent>
+    </Card>
   );
 }

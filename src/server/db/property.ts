@@ -14,6 +14,10 @@ export const createProperty = (author: string, input: TPropertyCreationInput) =>
     })
 }
 
-export const getPropertyByID = (id: string) => db.property.findUnique({
-    where: { id }
-})
+export const getPropertyByID = async(id: string) => { 
+    return db.property.findUnique({
+        where: { id }
+    })
+};
+
+export const getAllProperties = () => db.property.findMany()

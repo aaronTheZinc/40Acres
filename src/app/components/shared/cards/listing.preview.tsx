@@ -3,12 +3,11 @@ import {
   CardContent,
   CardFooter,
   CardHeader,
-  CardTitle,
 } from "@/components/ui/card";
-import Image from "next/image";
 import { PriceTag, PropertyTypeTag } from "../tags";
 import { Progress } from "@/components/ui/progress";
 import { Property } from "@prisma/client";
+import Link from "next/link";
 
 interface Props {
   property: Property;
@@ -48,9 +47,12 @@ export default function PropertyListingCard({ property }: Props) {
         </div>
       </CardContent>
       <CardFooter className="flex flex-col gap-1 pt-4">
-        <button className="w-full gap-2 rounded-md bg-black p-1 text-white">
+        <Link
+          href={`/property/${property?.id}`}
+          className="w-full gap-2 rounded-md bg-black p-1 text-center text-white"
+        >
           Invest
-        </button>
+        </Link>
         {/* <button className="w-full rounded-md border p-1">Inquire</button> */}
       </CardFooter>
     </Card>

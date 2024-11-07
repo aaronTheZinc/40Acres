@@ -1,9 +1,11 @@
+import { getAllProperties } from "@/server/db/property";
 import PropertiesSearchView from "../components/views/listings/explore";
 
-export default function ExplorePage() {
+export default async function ExplorePage() {
+  const properties = await getAllProperties();
   return (
     <main>
-      <PropertiesSearchView />
+      <PropertiesSearchView properties={properties} />
     </main>
   );
 }

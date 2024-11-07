@@ -12,7 +12,7 @@ export const PriceTag: FC<{ price: number }> = ({ price }) => (
 export type PropertyTagType = "townhouse" | "apartment" | "house";
 
 export const TrendTag: FC<{ trend: "up" | "down" }> = ({ trend }) => (
-  <div className="rounded-lg bg-green-300 p-2">
+  <div className="flex items-center justify-center rounded-lg bg-green-300 p-1">
     {trend === "up" ? <TrendingUp /> : <TrendingDown />}
   </div>
 );
